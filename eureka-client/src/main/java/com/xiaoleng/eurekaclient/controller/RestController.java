@@ -2,9 +2,7 @@ package com.xiaoleng.eurekaclient.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class RestController {
@@ -20,7 +18,13 @@ public class RestController {
     @GetMapping("redirect/hello")
     public @ResponseBody
     String redirectHello(@RequestParam("name") String name) {
-        return "redirectHello " + name + " sya hello world!\n" + "i am from port:" + port;
+        return "redirect hello:" + name + "\n" + "i am from port:" + port;
+    }
+
+    @PostMapping("/hello-world")
+    public @ResponseBody
+    String sayHelloWorld(@RequestBody String name) {
+        return "hello world:" + name + "\n" + "i am from port:" + port;
     }
 
 
