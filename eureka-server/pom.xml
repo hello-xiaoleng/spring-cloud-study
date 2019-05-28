@@ -6,7 +6,7 @@
         <groupId>com.xiaoleng</groupId>
         <artifactId>spring-cloud-study-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath>../spring-cloud-study-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>eureka-server</artifactId>
