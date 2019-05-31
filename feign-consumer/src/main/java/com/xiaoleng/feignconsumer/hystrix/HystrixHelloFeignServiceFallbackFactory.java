@@ -5,7 +5,7 @@ import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HelloFeignFallbackFactory implements FallbackFactory<HelloFeignService> {
+public class HystrixHelloFeignServiceFallbackFactory implements FallbackFactory<HelloFeignService> {
 
     @Override
     public HelloFeignService create(Throwable throwable) {
