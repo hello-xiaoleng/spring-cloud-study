@@ -1,9 +1,31 @@
 spring:
   application:
     name: eureka-client
+  datasource:
+    url: jdbc:mysql://101.132.143.173:3306/demo?characterEncoding=utf8
+    username: p2puser
+    driver-class-name: com.mysql.jdbc.Driver
+    password: p2poracle
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 server:
   port: 9098
+
+
+
+mybatis.mapper-locations: classpath:mapper/*.xml
+mybatis.configuration.map-underscore-to-camel-case: true
+
+mapper:
+  not-empty: false
+  identity: MYSQL
+
+logging:
+  level:
+    root: info
+    com.xiaoleng.eurekaclient.dao: debug
+
+
