@@ -3,7 +3,7 @@
 <mapper namespace="com.xiaoleng.eurekaclient.dao.UserDao">
 
     <sql id="BaseSql">
-        `id`, `name`, `age`
+        `id`, `name`, `age`,
     </sql>
 
     <select id="loadAndLock" resultType="com.xiaoleng.eurekaclient.domain.entity.User">
@@ -11,6 +11,15 @@
         <include refid="BaseSql"/>
         from user where `id` = #{id} for update
     </select>
+
+    <insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+        insert into user(`id`, `name`, `age`) values
+        <foreach collection="userList" item="item" separator=",">
+            (#{item.id},
+            #{item.name},
+            #{item.age})
+        </foreach>
+    </insert>
 
 
 </mapper>

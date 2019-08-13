@@ -1,5 +1,6 @@
 package com.xiaoleng.eurekaclient;
 
+import com.xiaoleng.eurekaclient.dao.UserDao;
 import com.xiaoleng.eurekaclient.domain.entity.User;
 import com.xiaoleng.eurekaclient.service.UserService;
 import org.junit.Test;
@@ -18,6 +19,9 @@ public class EurekaClientApplicationTests {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserDao userDao;
 
     private static final List<String> FIRST_NAMES = Arrays.asList("家", "和", "三", "四", "六", "大爷");
 

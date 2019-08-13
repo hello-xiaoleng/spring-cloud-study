@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Mapper
 public interface UserDao extends tk.mybatis.mapper.common.Mapper<User> {
 
@@ -16,5 +18,8 @@ public interface UserDao extends tk.mybatis.mapper.common.Mapper<User> {
      */
     @Transactional(rollbackFor = Exception.class)
     User loadAndLock(@Param("id") Integer id);
+
+
+    int batchInsert(@Param("userList") List<User> userList);
 
 }

@@ -1,8 +1,11 @@
 package com.xiaoleng.eurekaclient.controller;
 
+import com.xiaoleng.eurekaclient.domain.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 @Controller
 public class RestController {
@@ -25,6 +28,16 @@ public class RestController {
     public @ResponseBody
     String sayHelloWorld(@RequestBody String name) {
         return "hello world:" + name + "\n" + "i am from port:" + port;
+    }
+
+    @PostMapping("/test")
+    public @ResponseBody
+    User sayHelloWorld() {
+
+        User user = new User();
+        user.setDate(new Date());
+        user.setName("chenjia");
+        return user;
     }
 
 
