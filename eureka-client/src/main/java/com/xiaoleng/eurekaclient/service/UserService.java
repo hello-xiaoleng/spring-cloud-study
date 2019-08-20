@@ -32,8 +32,6 @@ public class UserService {
 
     @Transactional(rollbackFor = Exception.class)
     public Optional<User> loadAndLock(int id) {
-        Optional<User> optionalUser = Optional.ofNullable(userDao.loadAndLock(id));
-        //todo 业务逻辑
-        return optionalUser;
+        return Optional.ofNullable(userDao.loadAndLock(id));
     }
 }
