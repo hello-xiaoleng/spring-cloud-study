@@ -19,21 +19,17 @@ public class RestController {
     }
 
     @GetMapping("redirect/hello")
-    public @ResponseBody
-    String redirectHello(@RequestParam("name") String name) {
+    public @ResponseBody String redirectHello(@RequestParam("name") String name) {
         return "redirect hello:" + name + "\n" + "i am from port:" + port;
     }
 
     @PostMapping("/hello-world")
-    public @ResponseBody
-    String sayHelloWorld(@RequestBody String name) {
+    public @ResponseBody String sayHelloWorld(@RequestBody String name) {
         return "hello world:" + name + "\n" + "i am from port:" + port;
     }
 
     @PostMapping("/test")
-    public @ResponseBody
-    User sayHelloWorld() {
-
+    public @ResponseBody User sayHelloWorld() {
         User user = new User();
         user.setDate(new Date());
         user.setName("chenjia");
