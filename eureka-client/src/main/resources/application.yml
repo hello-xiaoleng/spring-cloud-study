@@ -2,10 +2,10 @@ spring:
   application:
     name: eureka-client
   datasource:
-    url: jdbc:mysql://101.132.143.173:3306/demo?characterEncoding=utf8
-    username: p2puser
+    url: jdbc:mysql://101.132.143.173:3306/study?characterEncoding=utf8
+    username: root
     driver-class-name: com.mysql.jdbc.Driver
-    password: p2poracle
+    password: Ctcf1805
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
 

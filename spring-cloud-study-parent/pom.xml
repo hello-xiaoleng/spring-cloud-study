@@ -28,6 +28,7 @@
         <tk-mybatis.version>2.1.5</tk-mybatis.version>
         <lombok.version>1.18.6</lombok.version>
         <mybatis.version>2.1.0</mybatis.version>
+        <mongodb.version>2.0.5.RELEASE</mongodb.version>
     </properties>
 
     <dependencyManagement>
@@ -56,6 +57,13 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                <version>${mongodb.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
