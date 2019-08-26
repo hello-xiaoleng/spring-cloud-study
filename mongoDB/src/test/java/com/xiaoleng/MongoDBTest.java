@@ -9,6 +9,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
@@ -48,7 +50,7 @@ public class MongoDBTest {
     @Test
     public void batchInsertTest() {
         Student student = Student.builder()
-                .name("chenjia")
+                .name("chenjia02")
                 .age(12)
                 .height(new BigDecimal("165.05"))
                 .weight(new BigDecimal("120.04"))
@@ -72,6 +74,15 @@ public class MongoDBTest {
     @Test
     public void queryTest() {
         List<Student> allStudent = mongoTemplate.findAll(Student.class);
-        allStudent.forEach(System.out::println); }
+//        allStudent.forEach(System.out::println);
+
+
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").is("chenjia02"));
+        List<Student> students = mongoTemplate.find(query, Student.class);
+        students.forEach(System.out::println);
+
+    }
+
 
 }
