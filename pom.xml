@@ -16,6 +16,7 @@
         <module>ribbon-consumer</module>
         <module>feign-consumer</module>
         <module>spring-cloud-study-parent</module>
+        <module>mongoDB</module>
     </modules>
 
 </project>

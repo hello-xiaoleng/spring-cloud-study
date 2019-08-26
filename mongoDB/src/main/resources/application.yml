@@ -1,0 +1,2 @@
+mongodb:
+  url: mongodb://101.132.143.173:27017/mongoDB_test
