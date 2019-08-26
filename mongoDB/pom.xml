@@ -8,11 +8,11 @@
         <version>2.0.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>com.xiaoleng</groupId>
+    <artifactId>mongoDB</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>mongoDB</name>
+    <description>Demo project for mongoDB</description>
 
     <properties>
         <java.version>1.8</java.version>
