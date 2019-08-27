@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
@@ -73,15 +74,26 @@ public class MongoDBTest {
 
     @Test
     public void queryTest() {
-        List<Student> allStudent = mongoTemplate.findAll(Student.class);
-//        allStudent.forEach(System.out::println);
-
-
         Query query = new Query();
         query.addCriteria(Criteria.where("name").is("chenjia02"));
         List<Student> students = mongoTemplate.find(query, Student.class);
         students.forEach(System.out::println);
+    }
 
+
+    @Test
+    public void updateTest() {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").is("chenjia02"));
+        Update update = Update.update("height", new BigDecimal("170.00"));
+        mongoTemplate.upsert(query,update,Student.class);
+    }
+
+    @Test
+    public void deleteTest(){
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").is("chenjia02"));
+        mongoTemplate.remove(query,Student.class);
     }
 
 
