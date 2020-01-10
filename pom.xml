@@ -17,6 +17,7 @@
         <module>feign-consumer</module>
         <module>spring-cloud-study-parent</module>
         <module>mongoDB</module>
+        <module>zuul</module>
     </modules>
 
 </project>
