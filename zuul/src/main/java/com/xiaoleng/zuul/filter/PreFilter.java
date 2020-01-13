@@ -7,9 +7,11 @@ package com.xiaoleng.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Component
 public class PreFilter extends ZuulFilter {
 
     @Override

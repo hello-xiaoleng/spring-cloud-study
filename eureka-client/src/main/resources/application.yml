@@ -2,7 +2,7 @@ spring:
   application:
     name: eureka-client
   datasource:
-    url: jdbc:mysql://101.132.143.173:3306/study?characterEncoding=utf8
+    url: jdbc:mysql://115.159.202.116:3306/answer?characterEncoding=utf8
     username: root
     driver-class-name: com.mysql.jdbc.Driver
     password: Ctcf1805
